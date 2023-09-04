@@ -1,9 +1,6 @@
 import React from "react";
-import jsPDF from "jspdf";
-import autoTable from "jspdf-autotable";
 
 const Body = () => {
-  const doc = new jsPDF();
   return (
     <div className="w-[100%] mt-2">
       <table className="text-[30px] w-[100%]">
