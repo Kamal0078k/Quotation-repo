@@ -11,7 +11,7 @@ const Preview = () => {
 
   return (
     <div className="w-screen h-screen">
-      <div className=" w-[100%]  border-2 border-black py-6 px-3" id="quote">
+      <div className=" w-[100%] " id="quote">
         <Head />
         <Quotehead />
         <Body />

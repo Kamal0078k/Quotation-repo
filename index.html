@@ -5,23 +5,22 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
+    <style>
+      @media print {
+        @page {
+          size: A4;
+        }
+        html,
+        body {
+          height: 100%;
+          margin: 0 !important;
+          padding: 0 !important;
+          overflow: hidden;
+        }
+      }
+    </style>
   </head>
-  <style>
-    @media print {
-      ]
-      @page {
-        margin: 1in;
-      }
 
-      body {
-        transform: scale-75;
-      }
-
-      @page {
-        size: a4;
-      }
-    }
-  </style>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
