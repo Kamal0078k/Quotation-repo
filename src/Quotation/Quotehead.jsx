@@ -3,8 +3,8 @@ import React from "react";
 const Quotehead = () => {
   return (
     <div className="w-[100%]">
-      <div>Quotation</div>
-      <div className="flex flex-row justify-between text-[10px]">
+      <div className="text-center text-5xl"> Quotation</div>
+      <div className="flex flex-row justify-between text-[20px]">
         <div>
           <div>
             To,
