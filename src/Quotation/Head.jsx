@@ -8,7 +8,7 @@ const Head = () => {
         <div>Cell: 996376533, 9515992534</div>
         <div>Mail: bhagyalaxmissfabrications@gmail.com</div>
       </div>
-      <div className="text-red-500  text-7xl border-2 w-[100%] text-center py-2 border-black">
+      <div className="text-red-500  text-5xl border-2 w-[100%] text-center py-2 border-black">
         <b>M/S BHAGYA LAXMI SS FABRICATIONS</b>
       </div>
       <div className="text-[20px] mr-[69%] -mt-2">

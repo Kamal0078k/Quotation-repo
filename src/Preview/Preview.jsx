@@ -15,6 +15,7 @@ const Preview = () => {
         <Head />
         <Quotehead />
         <Body />
+        <Quotehead />
       </div>
     </div>
   );
