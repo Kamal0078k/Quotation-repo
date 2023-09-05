@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import CardContent from "@mui/material/CardContent";
 import { Button, Card } from "@mui/material";
 import CardActions from "@mui/material/CardActions";
 import TextField from "@mui/material/TextField";
+import { Link } from "react-router-dom";
+import { QuoteContext } from "./App";
 
 import { db } from "./firebase";
 import {
@@ -14,14 +16,17 @@ import {
   onSnapshot,
   getDoc,
   getDocs,
+  deleteDoc,
   Timestamp,
   doc,
 } from "firebase/firestore";
 
 const History = () => {
+  const details = useContext(QuoteContext);
   const InvoiceRef = collection(db, "quotation");
   const [quotation, setQuotation] = useState([]);
   const [search, setSearch] = useState("");
+  const [beel, setBeel] = useState(true);
   const fetchdata = async () => {
     const data = await getDocs(InvoiceRef);
     setQuotation(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
@@ -49,7 +54,7 @@ const History = () => {
 
   useEffect(() => {
     fetchdata();
-  }, []);
+  }, [beel]);
   return (
     <div className="w-screen mt-4 px-4">
       <div className="flex gap-2">
@@ -82,6 +87,25 @@ const History = () => {
                 <b>To: </b> {ell.to} <br />
                 <b>created:</b> {date}{" "}
               </CardContent>
+              <CardActions className="-mt-5">
+                <Link to="/">
+                  <Button
+                    onClick={() => {
+                      details.setData(ell);
+                    }}
+                  >
+                    Edit
+                  </Button>
+                </Link>
+                <Button
+                  onClick={() => {
+                    deleteDoc(doc(db, "quotation", ell.id));
+                    setBeel((prev) => !prev);
+                  }}
+                >
+                  Delete
+                </Button>
+              </CardActions>
             </Card>
           );
         })

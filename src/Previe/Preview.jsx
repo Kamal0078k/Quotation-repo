@@ -13,12 +13,21 @@ const Preview = () => {
   }, []);
 
   return (
-    <div className="w-screen">
-      <div className=" w-[100%] " id="quote">
+    <div className="w-screen h-[1000px] relative">
+      <div className="absolute opacity-[3%] -rotate-[30deg] text-[450px] top-40 -left-3">
+        <b>BSF</b>
+      </div>
+      <div className=" w-[100%] absolute" id="quote">
         <Head />
         <Quotehead />
-        <Body />
-        <Footer />
+        <div className="flex flex-col justify-between h-[620px]">
+          <div className="flex-1">
+            <Body />
+          </div>
+          <div className="h-[10%]">
+            <Footer />
+          </div>{" "}
+        </div>
       </div>
     </div>
   );

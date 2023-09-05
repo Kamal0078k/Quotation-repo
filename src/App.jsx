@@ -14,6 +14,8 @@ function App() {
   const [data, setData] = useState({
     to: "",
     created: "",
+    warranty: "",
+    day: "",
     products: {
       items: [],
     },
@@ -22,6 +24,8 @@ function App() {
   const [data2, setData2] = useState({
     to: "",
     created: "",
+    warranty: "",
+    day: "",
     products: {
       items: [],
     },

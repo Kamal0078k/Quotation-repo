@@ -21,7 +21,7 @@ const Cards = () => {
             <b>UnitPrice: {ell.unitPrice}</b> <br />
           </CardContent>
           <CardActions>
-            <Button size="small">Update</Button>
+            <Button size="small">Edit</Button>
             <Button
               onClick={() => {
                 const index = details.data.products.items.indexOf(ell);

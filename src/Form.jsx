@@ -41,17 +41,7 @@ const Form = () => {
         id="outlined-basic"
         label="To"
         size="small"
-        className="w-[100%]"
-        variant="outlined"
-        onChange={(e) => {
-          details.setDay(e.target.value);
-        }}
-      />
-      <TextField
-        id="outlined-basic"
-        label="Delivery day"
-        size="small"
-        type="number"
+        value={details.data.to}
         className="w-[100%]"
         variant="outlined"
         onChange={(e) => {
@@ -63,12 +53,31 @@ const Form = () => {
       />
       <TextField
         id="outlined-basic"
-        label="Warranty"
+        label="Delivery day"
         size="small"
+        value={details.data.day}
+        type="number"
         className="w-[100%]"
         variant="outlined"
         onChange={(e) => {
-          details.setWarranty(e.target.value);
+          details.setData({
+            ...details.data,
+            day: e.target.value,
+          });
+        }}
+      />
+      <TextField
+        id="outlined-basic"
+        label="Warranty"
+        size="small"
+        value={details.data.warranty}
+        className="w-[100%]"
+        variant="outlined"
+        onChange={(e) => {
+          details.setData({
+            ...details.data,
+            warranty: e.target.value,
+          });
         }}
       />
       <div>Product Details:</div>

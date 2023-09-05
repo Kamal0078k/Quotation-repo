@@ -4,16 +4,11 @@ import { QuoteContext } from "./../App";
 
 const Footer = () => {
   const details = useContext(QuoteContext);
-  const [total, setTotal] = useState(0);
 
-  useEffect(() => {
-    details.data2.products.items.map((ell) => {
-      setTotal((prev) => prev + ell.qty * ell.unitPrice);
-    });
-  }, []);
   return (
-    <div className="text-[12px] mt-4 flex flex-row">
-      <div className="text-[12px] w-[503px]">
+    <div className="text-[12px] mt-4 ">
+      <hr className="border-black" />
+      <div className="text-[12px] mt-1 w-[503px]">
         T&C*
         <br />
         <ol type="1">
@@ -21,8 +16,8 @@ const Footer = () => {
             1. 50% amount should be paid as an advance and 50% against the bill.
           </li>
           <li>
-            2. Product will be delivered within {details.day} days from date of
-            PO and advance.
+            2. Product will be delivered within {details.data2.day} days from
+            date of PO and advance.
           </li>
           <li>3. Payment mode : Cheque / Cash</li>
 
@@ -30,18 +25,10 @@ const Footer = () => {
             4. This quotation is only valid for ten days following the creation
             date.
           </li>
-          {details.warranty && <li>5. Warranty:{details.warranty}</li>}
+          {details.data2.warranty && (
+            <li>5. Warranty:{details.data2.warranty}</li>
+          )}
         </ol>
-      </div>
-      <div className="text-right w-[200px]">
-        <div>Sub Total :</div>
-        <div>GST(18%) :</div>
-        <div>Grand Total :</div>
-      </div>
-      <div className="text-center w-[80px]">
-        <div>{total}</div>
-        <div>{(total * 0.18).toFixed(2)}</div>
-        <div>{(total * 1.18).toFixed(2)}</div>
       </div>
     </div>
   );
