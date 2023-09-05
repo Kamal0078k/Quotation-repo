@@ -3,8 +3,8 @@ import React from "react";
 const Quotehead = () => {
   return (
     <div className="w-[100%]">
-      <div className="text-center text-5xl"> Quotation</div>
-      <div className="flex flex-row justify-between text-[20px]">
+      <div className="text-center text-2xl"> QUOTATION</div>
+      <div className="flex flex-row justify-between text-[10px]">
         <div>
           <div>
             To,
@@ -14,7 +14,7 @@ const Quotehead = () => {
         </div>
         <div>
           <div>Date: 03/03/2002</div>
-          <div>
+          <div className="border-[0.1rem] mt-2 rounded-md bg-red-100 px-1 border-black">
             BANK DETAILS:<br></br> Name : Bahgyalaxmi SS Fabrications <br></br>
             A/C.No : 860220110000243 <br></br>IFSC : BKID0008602 BOI,
             Malkajgiri.
