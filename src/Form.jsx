@@ -44,12 +44,34 @@ const Form = () => {
         className="w-[100%]"
         variant="outlined"
         onChange={(e) => {
+          details.setDay(e.target.value);
+        }}
+      />
+      <TextField
+        id="outlined-basic"
+        label="Delivery day"
+        size="small"
+        type="number"
+        className="w-[100%]"
+        variant="outlined"
+        onChange={(e) => {
           details.setData({
             ...details.data,
             to: e.target.value,
           });
         }}
       />
+      <TextField
+        id="outlined-basic"
+        label="Warranty"
+        size="small"
+        className="w-[100%]"
+        variant="outlined"
+        onChange={(e) => {
+          details.setWarranty(e.target.value);
+        }}
+      />
+      <div>Product Details:</div>
       <TextField
         id="outlined-basic"
         size="small"

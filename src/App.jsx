@@ -9,6 +9,8 @@ import History from "./History";
 
 export const QuoteContext = createContext(null);
 function App() {
+  const [day, setDay] = useState(0);
+  const [warranty, setWarranty] = useState("");
   const [data, setData] = useState({
     to: "",
     created: "",
@@ -28,11 +30,15 @@ function App() {
   const contextValue = useMemo(
     () => ({
       data,
+      day,
+      warranty,
+      setWarranty,
+      setDay,
       setData,
       data2,
       setData2,
     }),
-    [data, data2]
+    [data, day, data2, warranty]
   );
   return (
     <QuoteContext.Provider value={contextValue}>
