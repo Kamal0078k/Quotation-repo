@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import { QuoteContext } from "./../App";
 
 const Quotehead = () => {
+  const details = useContext(QuoteContext);
   return (
     <div className="w-[100%]">
       <div className="text-center text-2xl"> QUOTATION</div>
-      <div className="flex flex-row justify-between text-[10px]">
+      <div className="flex flex-row justify-between text-[12px]">
         <div>
           <div>
             To,
-            <br /> SunShine Secunderbad
+            <br /> {details.data2.to}
           </div>
           <div>GSTIN: 36AKVPA5000B2ZP </div>
         </div>

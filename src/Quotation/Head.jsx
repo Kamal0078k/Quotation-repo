@@ -1,5 +1,5 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import { QuoteContext } from "./../App";
 const Head = () => {
   return (
     <div className="w-[100%] flex flex-col justify-center items-center gap-4">
