@@ -26,6 +26,10 @@ const Footer = () => {
           </li>
           <li>3. Payment mode : Cheque / Cash</li>
           <li>4. Warranty:-2years service</li>
+          <li>
+            5. This quotation is only valid for ten days following the creation
+            date.
+          </li>
         </ol>
       </div>
       <div className="text-right w-[200px]">
