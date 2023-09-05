@@ -12,7 +12,7 @@ const Footer = () => {
     });
   }, []);
   return (
-    <div className="text-[12px] flex flex-row">
+    <div className="text-[12px] mt-4 flex flex-row">
       <div className="text-[12px] w-[503px]">
         T&C*
         <br />

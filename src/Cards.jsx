@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import CardContent from "@mui/material/CardContent";
 import { Card } from "@mui/material";
 import CardActions from "@mui/material/CardActions";
@@ -7,6 +7,7 @@ import { QuoteContext } from "./App";
 
 const Cards = () => {
   const details = useContext(QuoteContext);
+  const [fakedata, setFakedata] = useState(true);
   useEffect(() => {
     console.log(details.data.products.items.length);
   }, [details]);
@@ -21,7 +22,20 @@ const Cards = () => {
           </CardContent>
           <CardActions>
             <Button size="small">Update</Button>
-            <Button size="small">Delete</Button>
+            <Button
+              onClick={() => {
+                const index = details.data.products.items.indexOf(ell);
+                console.log(index);
+                // if (index > -1) {
+                details.data.products.items.splice(index, 1);
+                setFakedata((prev) => !prev);
+                //   console.log("deleted");
+                // }
+              }}
+              size="small"
+            >
+              Delete
+            </Button>
           </CardActions>
         </Card>
       ))}

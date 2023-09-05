@@ -5,8 +5,11 @@ import { Button } from "@mui/material";
 import Cards from "./Cards";
 import { Link } from "react-router-dom";
 import { QuoteContext } from "./App";
+import { db } from "./../src/firebase";
+import { collection, addDoc, Timestamp, doc } from "firebase/firestore";
 
 const Form = () => {
+  const InvoiceRef = collection(db, "quotation");
   const details = useContext(QuoteContext);
   const [item, seItem] = useState({
     name: "",
@@ -17,6 +20,18 @@ const Form = () => {
   useEffect(() => {
     console.log(details.data);
   }, [details]);
+
+  const tofirebase = async () => {
+    details.setData2(details.data);
+    try {
+      addDoc(InvoiceRef, {
+        ...details.data,
+        created: Timestamp.now(),
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <div
       className="w-screen pt-10 flex flex-col items-start gap-4 justify-center
@@ -115,12 +130,12 @@ const Form = () => {
       </Button>
       <Cards />
       <Link to="/preview">
-        <Button
-          onClick={() => details.setData2(details.data)}
-          variant="contained"
-        >
+        <Button onClick={tofirebase} variant="contained">
           Preview
         </Button>
+      </Link>
+      <Link to="/history">
+        <Button variant="contained">History</Button>
       </Link>
     </div>
   );

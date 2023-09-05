@@ -5,11 +5,13 @@ import { useState, createContext, useMemo } from "react";
 import { Routes, Route } from "react-router-dom";
 import Preview from "./Previe/Preview";
 import Form from "./Form";
+import History from "./History";
 
 export const QuoteContext = createContext(null);
 function App() {
   const [data, setData] = useState({
     to: "",
+    created: "",
     products: {
       items: [],
     },
@@ -17,6 +19,7 @@ function App() {
 
   const [data2, setData2] = useState({
     to: "",
+    created: "",
     products: {
       items: [],
     },
@@ -36,7 +39,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Form />} />
         <Route path="/preview" element={<Preview />} />
-        <Route path="/history" />
+        <Route path="/history" element={<History />} />
       </Routes>
     </QuoteContext.Provider>
   );

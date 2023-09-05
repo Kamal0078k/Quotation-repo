@@ -17,7 +17,7 @@ const Quotehead = () => {
         <div>
           <div>Date: 03/03/2002</div>
           <div className="border-[0.1rem] mt-2 rounded-md bg-red-100 px-1 border-black">
-            BANK DETAILS:<br></br> Name : Bahgyalaxmi SS Fabrications <br></br>
+            BANK DETAILS:<br></br> Name : Bhagyalaxmi SS Fabrications <br></br>
             A/C.No : 860220110000243 <br></br>IFSC : BKID0008602 BOI,
             Malkajgiri.
           </div>
