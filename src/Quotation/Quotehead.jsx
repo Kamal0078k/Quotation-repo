@@ -8,8 +8,8 @@ const Quotehead = () => {
   return (
     <div className="w-[100%]">
       <div className="text-center text-2xl"> QUOTATION</div>
-      <div className="flex flex-row justify-between text-[14px]">
-        <div>
+      <div className="flex flex-row justify-between  text-[14px]">
+        <div className="w-[600px]">
           <div>
             To,
             <br /> {details.data2.to}

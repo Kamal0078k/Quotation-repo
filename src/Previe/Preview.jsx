@@ -4,6 +4,7 @@ import Head from "../Quotation/Head";
 import Quotehead from "../Quotation/Quotehead";
 import Body from "../Quotation/Body";
 import Footer from "../Quotation/Footer";
+import image from "./../assets/bsf.svg";
 
 const Preview = () => {
   useEffect(() => {
@@ -14,8 +15,8 @@ const Preview = () => {
 
   return (
     <div className="w-screen h-[1000px] relative">
-      <div className="absolute opacity-[3%] -rotate-[30deg] text-[450px] top-40 -left-3">
-        <b>BSF</b>
+      <div className="absolute  -rotate-[30deg] text-[450px] top-40 -left-3">
+        <img src={image} />
       </div>
       <div className=" w-[100%] absolute" id="quote">
         <Head />
