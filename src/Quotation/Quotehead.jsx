@@ -10,7 +10,7 @@ const Quotehead = () => {
       <div className="text-center text-2xl"> QUOTATION</div>
       <div className="flex flex-row justify-between  text-[14px]">
         <div className="w-[600px]">
-          <div>
+          <div className="h-[140px]">
             To,
             <br /> {details.data2.to}
           </div>
