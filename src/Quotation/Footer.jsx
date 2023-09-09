@@ -13,7 +13,8 @@ const Footer = () => {
         <br />
         <ol type="1">
           <li>
-            1. 50% amount should be paid as an advance and 50% against the bill.
+            1. {details.data2.advance}% amount should be paid as an advance and{" "}
+            {100 - details.data2.advance}% against the bill.
           </li>
           <li>
             2. Product will be delivered within {details.data2.day} days from

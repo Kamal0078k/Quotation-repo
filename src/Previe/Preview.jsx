@@ -21,7 +21,7 @@ const Preview = () => {
       <div className=" w-[100%] absolute" id="quote">
         <Head />
         <Quotehead />
-        <div className="flex flex-col justify-between h-[620px]">
+        <div className="flex flex-col justify-between h-[600px]">
           <div className="flex-1">
             <Body />
           </div>

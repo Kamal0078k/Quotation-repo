@@ -80,6 +80,21 @@ const Form = () => {
           });
         }}
       />
+      <TextField
+        id="outlined-basic"
+        label="Advance"
+        type="number"
+        size="small"
+        value={details.data.advance}
+        className="w-[100%]"
+        variant="outlined"
+        onChange={(e) => {
+          details.setData({
+            ...details.data,
+            advance: e.target.value,
+          });
+        }}
+      />
       <div>Product Details:</div>
       <TextField
         id="outlined-basic"
