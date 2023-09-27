@@ -32,6 +32,10 @@ const Form = () => {
       console.log(err);
     }
   };
+
+  const editItem = (data) => {
+    seItem(data);
+  };
   return (
     <div
       className="w-screen pt-10 flex flex-col items-start gap-4 justify-center
@@ -174,7 +178,7 @@ const Form = () => {
       >
         Add Product
       </Button>
-      <Cards />
+      <Cards editItem={editItem} />
       <Link to="/preview">
         <Button onClick={tofirebase} variant="contained">
           Preview
