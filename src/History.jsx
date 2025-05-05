@@ -14,10 +14,8 @@ import {
   orderBy,
   startAt,
   onSnapshot,
-  getDoc,
   getDocs,
   deleteDoc,
-  Timestamp,
   doc,
 } from "firebase/firestore";
 
@@ -55,6 +53,7 @@ const History = () => {
   useEffect(() => {
     fetchdata();
   }, [beel]);
+  
   return (
     <div className="w-screen mt-4 px-4">
       <div className="flex gap-2">
@@ -76,10 +75,14 @@ const History = () => {
         <>Loading...</>
       ) : (
         quotation.map((ell) => {
-          console.log(ell.created.toDate().getFullYear());
-          const date = `${ell.created.toDate().getDate()}/${ell.created
-            .toDate()
-            .getMonth()}/${ell.created.toDate().getFullYear()}`;
+          let date = "somek";
+          if (ell.created == undefined) {
+            date = "Not created";
+          } else {
+            date = `${ell.created.toDate().getDate()}/${ell.created
+              .toDate()
+              .getMonth()}/${ell.created.toDate().getFullYear()}`;
+          }
           return (
             <Card key={ell.id} className="mt-2 bg-red-200">
               <CardContent>
